@@ -30,9 +30,7 @@ public class TutorController {
     public ResponseEntity<TutorResponse> cadastrar(@RequestBody @Valid TutorCrRequest tutorDTO) {
         var response = tutorService.cadastrar(tutorDTO);
         
-        
-        
-        return ResponseEntity.created().body();
+        return ResponseEntity.ok().body(response);
     }
 
     @PutMapping

@@ -11,26 +11,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ValidacaoTutorAtingiuMaximo implements ValidacaoSolicitacaoAdocao {
-	@Autowired
-	private TutorRepository tutorRepository;
 	
 	@Autowired
 	private AdocaoRepository adocaoRepository;
 	
 	public void validar (AdocaoRequest adocaoDTO) {
-		var tutor = this.tutorRepository.findById(adocaoDTO.idTutor())
-				.orElseThrow();
 		
-		var adocoes = this.adocaoRepository.findAll();
+		var adocoes = this.adocaoRepository.countByTutorIdAndStatus(adocaoDTO.idTutor(), StatusAdocao.APROVADO);
 		
-		for (Adocao a : adocoes) {
-			int contador = 0;
-			if (a.getTutor() == tutor && a.getStatus() == StatusAdocao.APROVADO) {
-				contador = contador + 1;
-			}
-			if (contador == 5) {
-				throw new ValidacaoException("Tutor chegou ao limite máximo de 5 adoções!");
-			}
+		if(adocoes >= 5) {
+			throw new ValidacaoException("Tutor já atingiu o limite de adoções aprovadas");
 		}
+		
 	}
 }
