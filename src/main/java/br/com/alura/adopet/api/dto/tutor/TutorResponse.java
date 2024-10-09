@@ -1,5 +1,6 @@
-package br.com.alura.adopet.api.dto;
+package br.com.alura.adopet.api.dto.tutor;
 
+import br.com.alura.adopet.api.dto.adocao.AdocaoResponse;
 import br.com.alura.adopet.api.model.Tutor;
 
 import java.util.List;

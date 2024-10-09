@@ -1,8 +1,8 @@
 package br.com.alura.adopet.api.service;
 
-import br.com.alura.adopet.api.dto.TutorCrRequest;
-import br.com.alura.adopet.api.dto.TutorResponse;
-import br.com.alura.adopet.api.dto.TutorUpRequest;
+import br.com.alura.adopet.api.dto.tutor.TutorCrRequest;
+import br.com.alura.adopet.api.dto.tutor.TutorResponse;
+import br.com.alura.adopet.api.dto.tutor.TutorUpRequest;
 import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.model.Tutor;
 import br.com.alura.adopet.api.repository.TutorRepository;

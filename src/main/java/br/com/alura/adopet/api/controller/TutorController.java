@@ -1,13 +1,10 @@
 package br.com.alura.adopet.api.controller;
 
-import br.com.alura.adopet.api.dto.TutorCrRequest;
-import br.com.alura.adopet.api.dto.TutorResponse;
-import br.com.alura.adopet.api.dto.TutorUpRequest;
-import br.com.alura.adopet.api.model.Tutor;
-import br.com.alura.adopet.api.repository.TutorRepository;
+import br.com.alura.adopet.api.dto.tutor.TutorCrRequest;
+import br.com.alura.adopet.api.dto.tutor.TutorResponse;
+import br.com.alura.adopet.api.dto.tutor.TutorUpRequest;
 import br.com.alura.adopet.api.service.TutorService;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,8 +12,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/tutores")

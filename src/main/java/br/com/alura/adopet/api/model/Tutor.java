@@ -1,15 +1,10 @@
 package br.com.alura.adopet.api.model;
 
-import br.com.alura.adopet.api.dto.TutorUpRequest;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import br.com.alura.adopet.api.dto.tutor.TutorUpRequest;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "tutores")
