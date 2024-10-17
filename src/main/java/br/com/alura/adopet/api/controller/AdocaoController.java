@@ -1,10 +1,9 @@
 package br.com.alura.adopet.api.controller;
 
+import br.com.alura.adopet.api.dto.adocao.AdocaoRequest;
 import br.com.alura.adopet.api.dto.adocao.AdocaoResponse;
 import br.com.alura.adopet.api.dto.adocao.AprovacaoAdocaoRequest;
-import br.com.alura.adopet.api.dto.adocao.AdocaoRequest;
 import br.com.alura.adopet.api.dto.adocao.ReprovacaoAdocaoRequest;
-
 import br.com.alura.adopet.api.service.AdocaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
