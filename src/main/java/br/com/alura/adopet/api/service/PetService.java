@@ -2,10 +2,12 @@ package br.com.alura.adopet.api.service;
 
 import br.com.alura.adopet.api.dto.pet.PetRequest;
 import br.com.alura.adopet.api.dto.pet.PetResponse;
+import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.model.Pet;
 import br.com.alura.adopet.api.repository.AbrigoRepository;
 import br.com.alura.adopet.api.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -24,15 +26,15 @@ public class PetService {
 		return pets.map(PetResponse::new);
 	}
 	
-	public Page<PetResponse> findAllByAbrigo(Pageable pageable, long id) {
+	public Page<PetResponse> findAllByAbrigo(Pageable pageable, Long id) {
 		var pets = this.petRepository.findAllByAbrigoId(pageable, id);
 		
 		return pets.map(PetResponse::new);
 	}
 	
-	public PetResponse cadastrar(long abrigoId, PetRequest petDTO) {
+	public PetResponse cadastrar(Long abrigoId, PetRequest petDTO) {
 		var abrigo = this.abrigoRepository.findById(abrigoId)
-				.orElseThrow();
+				.orElseThrow(() -> new ValidacaoException("Abrigo nao encontrado."));
 		
 		var pet = Pet.builder()
 				.tipo(petDTO.tipo())
@@ -45,7 +47,8 @@ public class PetService {
 				.abrigo(abrigo)
 				.build();
 		
-		this.petRepository.save(pet);
+		
+        this.petRepository.save(pet);
 		
 		return new PetResponse(pet);
 	}

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record ReprovacaoAdocaoRequest(
 	@NotNull
-	long idAdocao,
+	Long idAdocao,
 	
 	@NotBlank
 	String justificativa

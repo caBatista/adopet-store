@@ -15,6 +15,7 @@ import java.util.Objects;
 @Builder
 @Getter
 @Setter
+@ToString
 public class Pet {
 
     @Id

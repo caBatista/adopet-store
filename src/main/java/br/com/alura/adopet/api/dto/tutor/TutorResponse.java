@@ -6,7 +6,7 @@ import br.com.alura.adopet.api.model.Tutor;
 import java.util.List;
 
 public record TutorResponse(
-	long id,
+	Long id,
 	String nome,
 	String telefone,
 	String email,

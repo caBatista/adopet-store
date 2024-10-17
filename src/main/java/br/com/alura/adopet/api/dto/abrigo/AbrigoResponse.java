@@ -6,7 +6,7 @@ import br.com.alura.adopet.api.model.Abrigo;
 import java.util.List;
 
 public record AbrigoResponse(
-	long id,
+	Long id,
 	String nome,
 	String telefone,
 	String email,
@@ -18,7 +18,7 @@ public record AbrigoResponse(
 				abrigo.getNome(),
 				abrigo.getTelefone(),
 				abrigo.getEmail(),
-				abrigo.getPets().stream().map(PetResponse::new).toList()
+				abrigo.getPets() == null ? null : abrigo.getPets().stream().map(PetResponse::new).toList()
 		);
 	}
 }

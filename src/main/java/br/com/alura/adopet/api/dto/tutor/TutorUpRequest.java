@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 
 public record TutorUpRequest(
 	@NotNull
-	long id,
+	Long id,
 	
 	String nome,
 	

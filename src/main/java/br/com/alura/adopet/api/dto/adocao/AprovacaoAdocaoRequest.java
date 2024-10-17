@@ -4,5 +4,5 @@ import jakarta.validation.constraints.NotNull;
 
 public record AprovacaoAdocaoRequest(
 	@NotNull
-	long idAdocao
+	Long idAdocao
 ) {}

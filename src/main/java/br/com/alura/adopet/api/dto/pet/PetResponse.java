@@ -3,15 +3,15 @@ package br.com.alura.adopet.api.dto.pet;
 import br.com.alura.adopet.api.model.Pet;
 
 public record PetResponse(
-	long id,
+	Long id,
 	String nome,
 	String raca,
 	Integer idade,
 	String cor,
 	Float peso,
 	String foiAdotado,
-	long abrigoId,
-	long tutorId
+	Long abrigoId,
+	Long tutorId
 ) {
 	public PetResponse(Pet pet) {
 		this(

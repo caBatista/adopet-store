@@ -44,7 +44,7 @@ public class AbrigoController {
     }
 
     @GetMapping("/{id}/pets")
-    public ResponseEntity<Page<PetResponse>> listarPets(@PageableDefault Pageable pageable, @PathVariable long id) {
+    public ResponseEntity<Page<PetResponse>> listarPets(@PageableDefault Pageable pageable, @PathVariable Long id) {
         var page = this.petService.findAllByAbrigo(pageable, id);
         
         if(page.getTotalElements() == 0) {
@@ -56,7 +56,7 @@ public class AbrigoController {
 
     @PostMapping("/{id}/pets")
     @Transactional
-    public ResponseEntity<PetResponse> cadastrarPet(@PathVariable long id, @RequestBody @Valid PetRequest petDTO) {
+    public ResponseEntity<PetResponse> cadastrarPet(@PathVariable Long id, @RequestBody @Valid PetRequest petDTO) {
         var response = this.petService.cadastrar(id, petDTO);
         
         return ResponseEntity.ok(response);

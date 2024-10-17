@@ -5,10 +5,10 @@ import jakarta.validation.constraints.NotNull;
 
 public record AdocaoRequest(
 	@NotNull
-	long idPet,
+	Long idPet,
 	
 	@NotNull
-	long idTutor,
+	Long idTutor,
 	
 	@NotBlank
 	String motivo

@@ -3,7 +3,7 @@ package br.com.alura.adopet.api.dto.adocao;
 import br.com.alura.adopet.api.model.Adocao;
 
 public record AdocaoResponse(
-	long id,
+	Long id,
 	String nomePet,
 	String nomeTutor,
 	String status
