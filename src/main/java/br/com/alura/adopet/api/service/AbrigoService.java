@@ -4,7 +4,6 @@ import br.com.alura.adopet.api.dto.abrigo.AbrigoRequest;
 import br.com.alura.adopet.api.dto.abrigo.AbrigoResponse;
 import br.com.alura.adopet.api.model.Abrigo;
 import br.com.alura.adopet.api.repository.AbrigoRepository;
-import br.com.alura.adopet.api.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,9 +13,6 @@ import org.springframework.stereotype.Service;
 public class AbrigoService {
 	@Autowired
 	private AbrigoRepository abrigoRepository;
-	
-	@Autowired
-	private PetRepository petRepository;
 	
 	public Page<AbrigoResponse> findAll(Pageable pageable) {
 		var page = this.abrigoRepository.findAll(pageable);

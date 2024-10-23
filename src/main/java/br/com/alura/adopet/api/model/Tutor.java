@@ -36,6 +36,7 @@ public class Tutor {
         if (tutorDTO.telefone() != null) {
             this.telefone = tutorDTO.telefone();
         }
+        
         if (tutorDTO.email() != null) {
             this.email = tutorDTO.email();
         }
